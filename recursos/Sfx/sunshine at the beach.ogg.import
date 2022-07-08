@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sunshine at the beach.ogg-8ee4611002198ec66818f2be32059dce.oggstr"
+
+[deps]
+
+source_file="res://recursos/Sfx/sunshine at the beach.ogg"
+dest_files=[ "res://.import/sunshine at the beach.ogg-8ee4611002198ec66818f2be32059dce.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,303 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://juego/menus/MenuVictoria.gd" type="Script" id=1]
+[ext_resource path="res://recursos/Fonts/Kenney Future.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://juego/menus/botones/BotonMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://juego/menus/botones/BotonSalir.gd" type="Script" id=5]
+[ext_resource path="res://recursos/Background/bg_layer1.png" type="Texture" id=6]
+[ext_resource path="res://recursos/Background/bg_layer2.png" type="Texture" id=7]
+[ext_resource path="res://recursos/Background/bg_layer3.png" type="Texture" id=8]
+[ext_resource path="res://recursos/Items/carrot.png" type="Texture" id=9]
+[ext_resource path="res://recursos/Players/bunny1_jump.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 75
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0.454902, 0.435294, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0.25098, 0.239216, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0.454902, 0.435294, 1 )
+border_width_bottom = 5
+border_color = Color( 0, 0.380392, 0.341176, 1 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0.713726, 0.682353, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0.454902, 0.435294, 1 )
+
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=11]
+resource_name = "girar"
+length = 20.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("bunny1_jump:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 720.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("carrot:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1440.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("carrot2:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 91.0, 1531.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("carrot3:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 51.0, 771.0 ]
+}
+
+[node name="MenuVictoria" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="carrot" type="Sprite" parent="."]
+position = Vector2( 155.78, 510.444 )
+texture = ExtResource( 9 )
+
+[node name="carrot2" type="Sprite" parent="."]
+position = Vector2( 260.684, 236.648 )
+rotation = 1.58825
+texture = ExtResource( 9 )
+
+[node name="carrot3" type="Sprite" parent="."]
+position = Vector2( 607.676, 299.583 )
+rotation = 0.890118
+texture = ExtResource( 9 )
+
+[node name="bunny1_jump" type="Sprite" parent="."]
+position = Vector2( 351.825, 404.641 )
+texture = ExtResource( 10 )
+offset = Vector2( 0.46817, -25.0214 )
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 131.0
+margin_top = 68.0
+margin_right = 1150.0
+margin_bottom = 173.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+self_modulate = Color( 0.0156863, 0.878431, 0.776471, 0.392157 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelGanaste" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -286.0
+margin_top = -42.5
+margin_right = 286.0
+margin_bottom = 42.5
+custom_fonts/font = SubResource( 1 )
+text = "¡Ganaste!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelPuntaje" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -425.097
+margin_top = -153.958
+margin_right = -130.097
+margin_bottom = 156.042
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="PanelPuntaje"]
+self_modulate = Color( 0, 1, 0.415686, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelPuntaje" type="Label" parent="PanelPuntaje"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -142.0
+margin_top = -114.424
+margin_right = 142.0
+margin_bottom = -69.4239
+custom_fonts/font = SubResource( 2 )
+text = "Puntaje:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Puntaje" type="Label" parent="PanelPuntaje"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -142.0
+margin_top = -22.5
+margin_right = 142.0
+margin_bottom = 22.5
+custom_fonts/font = SubResource( 3 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -509.0
+margin_top = -132.485
+margin_right = 510.0
+margin_bottom = -84.4852
+custom_constants/separation = 150
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonSalir" type="Button" parent="HBoxContainer"]
+margin_right = 434.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+text = "Salir"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonMenuPrincipal" parent="HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 584.0
+margin_right = 1019.0
+margin_bottom = 47.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
+text = "Menu Principal"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, -1000 )
+
+[node name="ParallaxFondo" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxFondo"]
+margin_left = -1179.29
+margin_top = -725.715
+margin_right = 868.714
+margin_bottom = 1322.29
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesLejanas" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesLejanas"]
+margin_left = -15.1185
+margin_top = -725.715
+margin_right = 2032.88
+margin_bottom = 1322.29
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesMedias" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesMedias"]
+margin_left = -42.3979
+margin_top = -725.715
+margin_right = 2005.61
+margin_bottom = 1322.29
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "girar"
+anims/girar = SubResource( 11 )
+
+[connection signal="pressed" from="HBoxContainer/BotonSalir" to="HBoxContainer/BotonSalir" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/BotonMenuPrincipal" to="." method="_on_BotonMenuPrincipal_pressed"]

@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://recursos/Enemies/spikeMan_walk2.png" type="Texture" id=1]
+[ext_resource path="res://recursos/Enemies/spikeMan_walk1.png" type="Texture" id=2]
+[ext_resource path="res://juego/enemigos/Pinchon.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "caminar",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.49785, 1.833 )
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 13.7882
+height = 3.19402
+
+[node name="Pinchon" type="KinematicBody2D"]
+z_index = 35
+z_as_relative = false
+collision_layer = 8
+collision_mask = 4
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -27.0725 )
+scale = Vector2( 0.35, 0.35 )
+frames = SubResource( 1 )
+animation = "caminar"
+
+[node name="ColisionPies" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -1.83643 )
+shape = SubResource( 2 )
+
+[node name="DetectorVacio" type="RayCast2D" parent="."]
+position = Vector2( 20, 0 )
+enabled = true
+cast_to = Vector2( 0, 15 )
+collision_mask = 4
+
+[node name="DetectorPared" type="RayCast2D" parent="."]
+position = Vector2( 2, -19 )
+enabled = true
+cast_to = Vector2( 15, 0 )
+collision_mask = 4
+
+[node name="DetectorJugador" type="Area2D" parent="."]
+modulate = Color( 0.164706, 0.164706, 0.164706, 1 )
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorJugador"]
+position = Vector2( 0, -19.0273 )
+shape = SubResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DetectorJugador"]
+polygon = PoolVector2Array( -5.36672, -33.25, -0.0478268, -53.1792, 5.26147, -33.2989 )
+
+[connection signal="body_entered" from="DetectorJugador" to="." method="_on_DetectorJugador_body_entered"]

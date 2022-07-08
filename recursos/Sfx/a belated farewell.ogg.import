@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/a belated farewell.ogg-e03250180aecc6da3aa1ae3ed426b001.oggstr"
+
+[deps]
+
+source_file="res://recursos/Sfx/a belated farewell.ogg"
+dest_files=[ "res://.import/a belated farewell.ogg-e03250180aecc6da3aa1ae3ed426b001.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://recursos/Sfx/Platform_Music.ogg" type="AudioStream" id=1]
+[ext_resource path="res://juego/autoloads/MusicaGlobal.gd" type="Script" id=2]
+[ext_resource path="res://recursos/Sfx/a belated farewell.ogg" type="AudioStream" id=3]
+[ext_resource path="res://recursos/Sfx/sunshine at the beach.ogg" type="AudioStream" id=4]
+
+[node name="MusicaGlobal" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Dia" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+bus = "Musica"
+
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Musica"
+
+[node name="Victoria" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "Musica"
